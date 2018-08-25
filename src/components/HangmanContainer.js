@@ -1,21 +1,21 @@
 import * as React from 'react'
 import Hangman from './Hangman'
-// import {connect} from 'react-redux'
-// import { addAlbum, setAlbums, getAlbums } from '../actions/albums'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {connect} from 'react-redux'
 
-// const sleep = time => new Promise(
-//   resolve => setTimeout(() => resolve(`I waited for ${time} ms`), time)
-// )
-
-export default class AlbumsListContainer extends React.PureComponent {
+export class HangmanContainer extends React.PureComponent {
   render() {
-    // if (!this.props.albums) return 'Loading...'
-    return <Hangman />
+    if (!this.props.game) return 'Loading...'
+    return <div>
+              <Link to="/">Home</Link>
+              <Hangman game={this.props.game}/>
+          </div>
   }
 }
 
-// const mapStateToProps = ({albums}) => ({
-//         albums
-// })
+const mapStateToProps = ({game}) => ({
+        game
+})
 
-// export default connect(mapStateToProps, {getAlbums})(AlbumsListContainer)
+export default connect(mapStateToProps)(HangmanContainer)
+

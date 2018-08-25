@@ -3,18 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 import HangmanContainer from './components/HangmanContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from 'react-redux'
+import { newGame } from './actions/game'
 
 class App extends Component {
+  
   render() {
+    {this.props.newGame()}
     return (
       <Router>
         <div className="App">
           <Route exact path='/' render={(props) => (
             <div>
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h1 className="App-title">Welcome to Hangman</h1>
-            </header>
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <h1 className="App-title">Welcome to Hangman</h1>
+              </header>
             
               <p>Start a new game by clicking the link below</p>
               <Link to={'/hangman'}>Start Playing</Link>
@@ -27,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { newGame })(App);
