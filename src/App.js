@@ -11,9 +11,9 @@ class App extends Component {
   render() {
     {this.props.newGame()}
     return (
-      <Router>
+      <Router basename={'/hangman-finished'}>
         <div className="App">
-          <Route exact path='/' render={(props) => (
+          <Route exact path={`${process.env.PUBLIC_URL}/`} render={(props) => (
             <div>
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
@@ -21,10 +21,10 @@ class App extends Component {
               </header>
             
               <p>Start a new game by clicking the link below</p>
-              <Link to={'/hangman'}>Start Playing</Link>
+              <Link to={`${process.env.PUBLIC_URL}/hangman`}>Start Playing</Link>
             </div>
           )}/>
-          <Route exact path="/hangman" component={HangmanContainer} />
+          <Route exact path={`${process.env.PUBLIC_URL}/hangman`} component={HangmanContainer} />
         </div>
       </Router>
     );
