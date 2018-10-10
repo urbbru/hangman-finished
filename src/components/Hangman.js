@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { showGuess, gameFinished, isWinner, wrongGuessLimit, wrongGuessCount} from '../lib/game'
+import { showGuess, gameFinished, wrongGuessLimit, wrongGuessCount} from '../lib/game'
 import { Card, Elevation, Button, Tooltip, InputGroup, Callout } from "@blueprintjs/core";
 
 export default function Hangman(props) {

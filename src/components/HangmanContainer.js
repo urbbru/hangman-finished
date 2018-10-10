@@ -4,19 +4,8 @@ import { connect } from 'react-redux'
 import { newGame, makeGuess, gameOver } from '../actions/game'
 import { Spinner } from "@blueprintjs/core"
 import { Card, Elevation, Button } from "@blueprintjs/core";
-import { showGuess, gameFinished, isWinner, wrongGuessLimit, wrongGuessCount} from '../lib/game'
 
 export class HangmanContainer extends React.PureComponent {
-  areYouDone = () => {
-    const game = this.props.game
-    if (gameFinished(game.word, game.guesses)) {
-        if (wrongGuessLimit(game.word, game.guesses)) {
-            this.props.gameOver(false)
-        } else {
-            this.props.gameOver(true)
-        }
-    }
-  }
 
   render() {
     const game = this.props.game
