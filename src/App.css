@@ -1,15 +1,25 @@
 .App {
   text-align: center;
+  padding: 2% 3%;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
+.navBar {
+  margin-bottom: 2%;
+  max-width:1000px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .App-header {
-  background-color: #222;
-  height: 150px;
   padding: 20px;
   color: white;
 }
@@ -22,7 +32,17 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.word-card {
+  max-width: 280px;
+  margin: 4% auto;
+}
+
+.guess-input {
+  width: 200px; 
+  margin: 0 auto;
+}
+
+.game-rules {
+  width:75% !important;
+  margin: 2% auto;
 }
